@@ -83,7 +83,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>myweb-tasks</finalName>
+		<finalName>redis-tasks</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
