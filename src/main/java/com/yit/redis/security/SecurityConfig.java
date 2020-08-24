@@ -16,8 +16,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-    	String password = passwordEncoder().encode("myRadisP@ss");
-    	auth.inMemoryAuthentication().withUser("admin").password(passwordEncoder().encode("password")).roles("ADMIN");
+    	
+    	auth.inMemoryAuthentication()
+    	.withUser("admin")
+    	.password(passwordEncoder().encode("password"))
+    	.roles("ADMIN");
     }
 
     @Bean
