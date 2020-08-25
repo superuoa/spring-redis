@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import com.yit.redis.model.Customer;
 import com.yit.redis.repository.CustomerService;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +44,8 @@ public class CustomerController {
 
     @PostMapping("/save")
     public ResponseEntity<?> postCustomers(@RequestBody Customer body) {
-    	System.out.println("post body "+body);
+    	
+    	body.setCreateDate(new Date());
         Customer customer = customerService.createCustomer(body);
         return ResponseEntity.status(HttpStatus.CREATED).body(customer);
     }

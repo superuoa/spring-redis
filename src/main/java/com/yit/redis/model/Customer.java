@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -19,6 +21,9 @@ public class Customer {
     private Integer age;
     @NotNull
     private String email;
+    @NotNull
+    private Date createDate;
+    
     
 	public String getId() {
 		return id;
@@ -49,6 +54,12 @@ public class Customer {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
     
     
